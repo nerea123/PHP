@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>HTML</title>
+		<meta name="author" content="Nerea" />
+		<!-- Date: 2014-01-29 -->
+		<script>
+			
+			function valida(){
+				var frase=document.getElementById("frase");
+				var sep=document.getElementById("sep");
+				
+				if(frase.value == "" || !isNaN(frase.value))
+					alert("Escribe una frase");
+				else if(sep.value == "" || isNaN(sep.value))
+					alert("Escribe un numero como separador");
+				else
+					document.getElementById("form").submit();
+			}
+			
+		</script>
+	</head>
+	<body>
+		<form action="codificado.php" method="post" id="form">
+			Introduce la frase a codificar<input type="text" name="frase" id="frase"/><br>
+			Introduce el separador<input type="text" name="sep" id="sep"/><br>
+			<input type="button" value="Enviar" onclick="valida();" />
+		</form>
+	</body>
+</html>
+

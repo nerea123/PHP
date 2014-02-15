@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>HTML</title>
+		<meta name="author" content="Nerea" />
+		<!-- Date: 2014-01-27 -->
+		<script>
+			function validar(){
+				var nom=document.getElementById("nombre");
+				var coment=document.getElementById("text");
+				var error=false;
+				if(nombre.value == "" && isNaN(nombre.value)){
+					alert("Introduce tu nombre");
+					error = true;
+				}
+				else if(coment.value.length == 0){
+					alert("Introduce tu comentario");
+					error = true;
+				}
+				
+				if(!error){
+					document.getElementById("myForm").submit();
+					return true;
+					
+				}
+				return false;
+			}
+			
+		</script>
+	</head>
+	<body>
+		
+		<form action="visitas.php" id="myForm" method="post">
+			Nombre<input type="text" name="nombre" id="nombre" /><br>
+			Edad <select name="edad" id="edad">
+				<option>20</option>
+				<option>30</option>
+				<option>40</option>
+			</select><br>
+			Comentario <textarea name="text" id="text"></textarea><br>
+			<input type="button"  id="enviar" value="enviar" onclick="return validar();"/>
+		</form>
+
+	</body>
+</html>
+

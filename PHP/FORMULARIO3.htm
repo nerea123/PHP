@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+<title>FORMULARIO 1</title>
+<script type="text/javascript" src="./validaciones/validar.js"></script>
+<script>
+function validar(){
+	
+	var pulsado=0;
+	var error=false;
+	var valida=true;
+	var radio=document.getElementsByName("SEXO");
+	var nom=document.getElementById("nombre");
+	var dir=document.getElementById("dir");
+	var ape1=document.getElementById("ape1");
+	var ape2=document.getElementById("ape2");
+	var cp=document.getElementById("cp");
+	
+	if(vacio(nom.value,"El campo nombre es obligatorio"))
+		valida=false;
+	if(valida)	
+		valida=comprueba_texto(nom.value,"El campo nombre debe de ser texto");
+	if(valida)	
+		valida=comprueba_texto(ape1.value,"El campo apelido1 debe de ser texto");
+	if(valida)	
+		valida=comprueba_texto(ape2.value,"El campo apelido2 debe de ser texto");
+	if(valida)
+		valida=valida_radio(radio,"Debes seleccionar tu sexo")
+	
+			
+		
+	
+	/*for(var i=0; i<radio.length; i++ ){
+		if(radio[i].checked)
+			pulsado=radio[i];
+	}
+	
+	if(nom.value == "" || !isNaN(nom.value )){
+		alert("Escribe tu nombre")
+		error=true;	
+	}
+	
+	else if(ape1.value == "" || !isNaN(ape1.value )){
+		alert("Escribe tu 1 apellido")
+		error=true;	
+	}
+	
+	else if(ape2.value == "" || !isNaN(ape2.value )){
+		alert("Escribe tu 2 apellido")
+		error=true;	
+	}
+	
+	else if(dir.value == "" || !isNaN(dir.value )){
+		alert("Escribe tu direccion")
+		error=true;	
+	}
+	
+	else if(pulsado == 0){
+		alert("Selecciona tu sexo");;
+		error=true;
+	}
+	
+	else if(cp.value == "" || isNaN(cp.value )){
+		alert("Escribe tu codigo postal")
+		error=true;	
+	}
+	
+	if(!error)
+		document.getElementById("form1").submit();*/
+	if(valida)
+		document.getElementById("form1").submit();	
+	
+	
+		
+}
+
+</script>
+</head>
+<BODY>
+<?php
+
+<?	
+<FORM action="" name="form1" method="post">
+Nombre:<INPUT type="text" name="nombre" size="25" id="nombre"><BR>
+1<SUP>er</SUP>Apellido:<INPUT type="text" name="ap1" size="25" id="ape1"><BR>
+2� Apellido:<INPUT type="text" name="ap2" size="25" id="ape2"><BR>
+Direcci�n: <INPUT type="text" name="dir" size="45" id="dir"><BR>
+C�digo Postal: <INPUT type="text" name="cp" size="5" id="cp"><BR>
+Ciudad: <SELECT name="ciudad" size="1" id="ciudad">
+<OPTION value="VALENCIA">VALENCIA</OPTION>
+<OPTION value="SEVILLA">SEVILLA</OPTION>
+<OPTION value="BARCELONA">BARCELONA</OPTION>
+<OPTION value="MADRID">MADRID</OPTION>
+</SELECT>
+<BR>
+Sexo:<BR>
+<INPUT type="radio" name="SEXO" value="hombre" id="hombre">hombre
+<INPUT type="radio" name="SEXO" value="mujer" id="mujer" checked="checked">mujer<BR>
+Matriculado (SI/NO): <INPUT type="checkbox" name="matriculado"><br>
+<INPUT type="button" value="ENVIAR" onclick="validar();">
+<INPUT type="reset" value="BORRAR">
+</FORM>
+</BODY>
+</html>

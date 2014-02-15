@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Login</title>
+		<meta name="author" content="Nerea" />
+		<!-- Date: 2014-01-29 -->
+		<script>
+		function valida () {
+		  
+		
+			var usu=document.getElementById("usuario");
+			var pss=document.getElementById("pss");
+			
+			if(usu.value == "" || !isNaN(usu.value))
+				alert("Escribe el usuario")
+			else if(pss.value == "")
+				alert("Escribe la contraseña")
+			else
+				document.getElementById("form").submit();
+		}
+		</script>
+	</head>
+	<body>
+	<h1>Login de usuario</h1><br>
+	<form action="verificar.php" method="post" id="form">
+		Usuario<input type="text" name="usuario" id="usuario" /><br>
+		Contraseña<input type="password" name="pss" id="pss" /><br>
+		<input type="button" value="Enviar" onclick="valida();"/>
+	</form>
+	
+	</body>
+</html>
+
